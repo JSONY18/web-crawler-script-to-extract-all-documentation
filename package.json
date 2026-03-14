@@ -1,0 +1,17 @@
+{
+  "name": "crawl-openclaw",
+  "version": "1.0.0",
+  "description": "Crawler for docs.openclaw.ai — saves all pages as Markdown files",
+  "main": "crawl-openclaw.js",
+  "scripts": {
+    "start": "node crawl-openclaw.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
+    "chalk": "^4.1.2",
+    "p-queue": "^7.4.1",
+    "robots-parser": "^3.0.1",
+    "turndown": "^7.2.0"
+  }
+}
