@@ -1,0 +1,19 @@
+name: Deploy to Production
+on:
+  push:
+    branches: [ main ] # Trigger on every push to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+      - name: Deploy Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'my-crawler-app'
+          package: '.'
